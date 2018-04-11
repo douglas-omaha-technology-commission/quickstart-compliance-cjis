@@ -17,15 +17,15 @@
     },
     {
         "ParameterKey": "pSupportsConfig",
-        "ParameterValue": "No"
+        "ParameterValue": "false"
     },
     {
         "ParameterKey": "pAvailabilityZoneA",
-        "ParameterValue": "$[alfred_gensingleaz_1]"
+        "ParameterValue": "$[alfred_getsingleaz_1]"
     },
     {
         "ParameterKey": "pAvailabilityZoneB",
-        "ParameterValue": "$[alfred_gensingleaz_2]"
+        "ParameterValue": "$[alfred_getsingleaz_2]"
     },
     {
         "ParameterKey": "pVPCTenancy",
