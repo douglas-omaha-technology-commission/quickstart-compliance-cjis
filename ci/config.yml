@@ -1,9 +1,10 @@
 global:
+  govcloud: true
   marketplace-ami: false
   owner: quickstart-eng@amazon.com
-  qsname: quickstart-enterprise-accelerator-cjis
+  qsname: quickstart-compliance-cjis
   regions:
-    - ap-southeast-1
+  - ap-southeast-1
   reporting: true
 tests:
   defaults:
