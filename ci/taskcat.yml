@@ -1,0 +1,12 @@
+global:
+  govcloud: true
+  marketplace-ami: false
+  owner: quickstart-eng@amazon.com
+  qsname: quickstart-compliance-cjis
+  regions:
+  - ap-southeast-1
+  reporting: true
+tests:
+  defaults:
+    parameter_input: defaults.json
+    template_file: main.template
