@@ -126,9 +126,9 @@ Mappings:
       Glacier: 'true'
   AWSAMIRegionMap:
     AMI:
-      AMZNLINUXHVM: amzn-ami-hvm-2018.03.0.20181116-x86_64-gp2
+      AMZNLINUXHVM: amzn-ami-hvm-2018.03.0.20181129-x86_64-gp2
     ap-southeast-1:
-      AMZNLINUXHVM: ami-07ad70c269d8a418c
+      AMZNLINUXHVM: ami-05b3bcf7f311194b3
       InstanceType: m4.large
       InstanceTypeDatabase: db.m4.large
     us-gov-west-1:
@@ -193,8 +193,14 @@ Resources:
             - s3
       TimeoutInMinutes: 20
       Parameters:
-        pRegionAZ1Name: !Select [ 0, !Ref pAvailabilityZones ]
-        pRegionAZ2Name: !Select [ 1, !Ref pAvailabilityZones ]
+        pRegionAZ1Name:
+          !Select
+          - 0
+          - !Ref pAvailabilityZones
+        pRegionAZ2Name:
+          !Select
+          - 1
+          - !Ref pAvailabilityZones
         pProductionVPCName: Production VPC
         pBastionSSHCIDR: 0.0.0.0/0
         pDMZSubnetACIDR: 10.100.10.0/24
@@ -270,8 +276,14 @@ Resources:
           - AWSAMIRegionMap
           - !Ref AWS::Region
           - AMZNLINUXHVM
-        pRegionAZ1Name: !Select [ 0, !Ref pAvailabilityZones ]
-        pRegionAZ2Name: !Select [ 1, !Ref pAvailabilityZones ]
+        pRegionAZ1Name:
+          !Select
+          - 0
+          - !Ref pAvailabilityZones
+        pRegionAZ2Name:
+          !Select
+          - 1
+          - !Ref pAvailabilityZones
         pEnvironment:
           !FindInMap
           - CustomVariables
@@ -382,8 +394,14 @@ Resources:
           - ProductionVpcTemplate
           - Outputs.rDBPrivateSubnetB
         pManagementCIDR: 10.10.0.0/16
-        pRegionAZ1Name: !Select [ 0, !Ref pAvailabilityZones ]
-        pRegionAZ2Name: !Select [ 1, !Ref pAvailabilityZones ]
+        pRegionAZ1Name:
+          !Select
+          - 0
+          - !Ref pAvailabilityZones
+        pRegionAZ2Name:
+          !Select
+          - 1
+          - !Ref pAvailabilityZones
         pWebServerAMI:
           !FindInMap
           - AWSAMIRegionMap
@@ -402,7 +420,7 @@ Resources:
           - AWSAMIRegionMap
           - !Ref AWS::Region
           - InstanceTypeDatabase
-        pDBAllocatedStorage: "10"
+        pDBAllocatedStorage: '10'
         pEnvironment:
           !FindInMap
           - CustomVariables
