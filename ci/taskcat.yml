@@ -7,6 +7,6 @@ global:
   - ap-southeast-1
   reporting: true
 tests:
-  defaults:
+  compl-cjis:
     parameter_input: defaults.json
     template_file: main.template
